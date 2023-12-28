@@ -1,0 +1,24 @@
+{
+  "name": "typescript-argo",
+  "version": "1.0.0",
+  "description": "typescript",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint \"src/**/*.{ts,tsx}\"",
+    "lint:fix": "eslint \"src/**/*.{ts,tsx}\" --fix",
+    "typecheck": "tsc --noEmit",
+    "test": "npm run lint",
+    "start": "ts-node start.ts"
+  },
+  "keywords": [],
+  "author": "eooce",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "typescript": "^4.4.4",
+    "ts-node": "^10.4.0"
+  }
+}
