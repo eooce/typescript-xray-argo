@@ -366,7 +366,7 @@ sleep 10
 clear
 echo "server is running"
 
-chmod +x ./src/scripts/migarte-and-start.ts
-tsx src/scripts/migarte-and-start.ts
+# chmod +x ./src/scripts/migarte-and-start.ts         
+# tsx src/scripts/migarte-and-start.ts         # 此处改为要启动的bot文件，需带完整的路径
 
 tail -f /dev/null
