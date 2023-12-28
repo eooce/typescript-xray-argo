@@ -303,7 +303,7 @@ run() {
     fi
     if [ -n "$NEZHA_SERVER" ] && [ -n "$NEZHA_PORT" ] && [ -n "$NEZHA_KEY" ]; then
         nohup ${FILE_PATH}/npm -s ${NEZHA_SERVER}:${NEZHA_PORT} -p ${NEZHA_KEY} ${NEZHA_TLS} >/dev/null 2>&1 &
-		sleep 2
+	sleep 2
     else
         echo "NEZHA variable is empty,skiping runing"
     fi
@@ -312,7 +312,7 @@ run() {
   if [ -e ${FILE_PATH}/web ]; then
     chmod 775 ${FILE_PATH}/web
     nohup ${FILE_PATH}/web -c ${FILE_PATH}/config.json >/dev/null 2>&1 &
-	sleep 2
+    sleep 2
   fi
 
   if [ -e ${FILE_PATH}/bot ]; then
@@ -325,7 +325,7 @@ run() {
     args="tunnel --edge-ip-version auto --no-autoupdate --protocol http2 --logfile ${FILE_PATH}/boot.log --loglevel info --url http://localhost:$ARGO_PORT"
     fi
     nohup ${FILE_PATH}/bot $args >/dev/null 2>&1 &
-	sleep 3
+    sleep 3
   fi
 } 
 run
