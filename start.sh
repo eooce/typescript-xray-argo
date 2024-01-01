@@ -294,18 +294,19 @@ argo_configure
 sleep 3
 
 run() {
-  if [ -e ${FILE_PATH}/npm ]; then
-    chmod 775 ${FILE_PATH}/npm 
-    if [ "$NEZHA_PORT" = "443" ]; then
-      NEZHA_TLS="--tls"
-    else
-      NEZHA_TLS=""
-    fi
+  if [ -e "${FILE_PATH}/npm" ]; then
+    	chmod 775 "${FILE_PATH}/npm"
+    	tlsPorts=("443" "8443" "2096" "2087" "2053")
+    	if [[ "${tlsPorts[*]}" =~ "${NEZHA_PORT}" ]]; then
+    		NEZHA_TLS="--tls"
+    	else
+    		NEZHA_TLS=""
+    	fi
     if [ -n "$NEZHA_SERVER" ] && [ -n "$NEZHA_PORT" ] && [ -n "$NEZHA_KEY" ]; then
         nohup ${FILE_PATH}/npm -s ${NEZHA_SERVER}:${NEZHA_PORT} -p ${NEZHA_KEY} ${NEZHA_TLS} >/dev/null 2>&1 &
-	sleep 2
+        sleep 2
     else
-        echo "NEZHA variable is empty,skiping runing"
+        echo "NEZHA variable is empty,skip runing"
     fi
   fi
 
