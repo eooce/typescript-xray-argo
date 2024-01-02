@@ -1,7 +1,7 @@
 #!/bin/bash
 export UUID=${UUID:-'de823d1f-9a68-4f79-b82e-0267132b6a99'}
 export NEZHA_SERVER=${NEZHA_SERVER:-'nz.abcd.cn'}
-export NEZHA_PORT=${NEZHA_PORT:-'5555'}
+export NEZHA_PORT=${NEZHA_PORT:-'5555'} # 哪吒端口为{443,8443,2096,2087,2083,2053}其中之一时开启tls
 export NEZHA_KEY=${NEZHA_KEY:-''}
 export ARGO_DOMAIN=${ARGO_DOMAIN:-''}
 export ARGO_AUTH=${ARGO_AUTH:-''}
@@ -296,7 +296,7 @@ sleep 3
 run() {
   if [ -e "${FILE_PATH}/npm" ]; then
     	chmod 775 "${FILE_PATH}/npm"
-    	tlsPorts=("443" "8443" "2096" "2087" "2053")
+    	tlsPorts=("443" "8443" "2096" "2087" "2083" "2053")
     	if [[ "${tlsPorts[*]}" =~ "${NEZHA_PORT}" ]]; then
     		NEZHA_TLS="--tls"
     	else
@@ -368,6 +368,6 @@ clear
 echo "server is running"
 
 # chmod +x ./src/scripts/migarte-and-start.ts         
-# tsx src/scripts/migarte-and-start.ts         # 此处改为要启动的bot文件，需带完整的路径
+# tsx src/scripts/migarte-and-start.ts         # 此处改为要启动的bot文件并取消注释，需带完整的路径
 
 tail -f /dev/null
