@@ -2,13 +2,13 @@
   "name": "typescript-argo",
   "version": "1.0.0",
   "description": "typescript",
-  "main": "start.js",
+  "main": "index.js",
   "scripts": {
     "lint": "eslint \"src/**/*.{ts,tsx}\"",
     "lint:fix": "eslint \"src/**/*.{ts,tsx}\" --fix",
     "typecheck": "tsc --noEmit",
     "test": "npm run lint",
-    "start": "ts-node start.ts"
+    "start": "ts-node index.ts"
   },
   "keywords": [],
   "author": "eooce",
