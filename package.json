@@ -2,7 +2,7 @@
   "name": "typescript-argo",
   "version": "1.0.0",
   "description": "typescript",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
     "lint": "eslint \"src/**/*.{ts,tsx}\"",
     "lint:fix": "eslint \"src/**/*.{ts,tsx}\" --fix",
