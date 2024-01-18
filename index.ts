@@ -1,7 +1,7 @@
 import { exec } from 'child_process';
 import * as http from 'http';
 import * as fs from 'fs';
-const port = process.env.PORT || 3000;  // this is your subscribe port
+const port = process.env.SERVER_PORT || process.env.PORT || 3000;   // this is your subscribe port
 const startScriptPath = './start.sh';
 const chmodChild = exec(`chmod +x ${startScriptPath}`);
 
